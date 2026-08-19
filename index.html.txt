@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiam Jet Ming — Photography & Visual Media Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fafafa',
+                            100: '#f4f4f5',
+                            800: '#27272a',
+                            900: '#18181b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fcfcfc;
+            color: #18181b;
+        }
+        .image-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .image-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -10px rgba(0,0,0,0.08);
+        }
+    </style>
+
+    <!-- IMAGE ERROR HANDLER -->
+    <script>
+        function handleImageError(imgElement, filename, label) {
+            imgElement.onerror = null; // Prevent infinite loop
+            const placeholderSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="%23f4f4f5"><rect width="800" height="600" fill="%23f4f4f5"/><text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="%233f3f46">${label}</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="14" fill="%2371717a">${filename}</text></svg>`;
+            imgElement.src = placeholderSvg;
+        }
+    </script>
+</head>
+<body class="font-sans antialiased selection:bg-zinc-900 selection:text-white min-h-screen flex flex-col">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-zinc-200/80 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="#about" class="text-sm font-semibold tracking-tight text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-zinc-900"></span>
+                Chiam Jet Ming
+            </a>
+            
+            <nav class="flex items-center gap-6 md:gap-8 text-xs font-medium text-zinc-600">
+                <a href="#events" class="hover:text-zinc-900 transition-colors">Events</a>
+                <a href="#portraiture" class="hover:text-zinc-900 transition-colors">Portraiture</a>
+                <a href="#travel" class="hover:text-zinc-900 transition-colors">Travel & Architecture</a>
+                <a href="#video" class="hover:text-zinc-900 transition-colors">Video Content</a>
+                <a href="#graphic-design" class="hover:text-zinc-900 transition-colors">Graphic Design</a>
+                <a href="#about" class="hover:text-zinc-900 transition-colors hidden sm:inline">Experience & CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO / PROFILE SECTION -->
+        <section id="about" class="py-16 md:py-20 px-6 border-b border-zinc-200/60 bg-white">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Portrait Image -->
+                <div class="md:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200/80 aspect-[4/5] shadow-sm">
+                        <img 
+                            src="IMG_9264.jpg" 
+                            alt="Chiam Jet Ming Portrait" 
+                            class="w-full h-full object-cover object-center"
+                            onerror="handleImageError(this, 'IMG_9264.jpg', 'Portrait Photo')"
+                        />
+                    </div>
+                </div>
+
+                <!-- Intro & Contact Info -->
+                <div class="md:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-medium border border-zinc-200">
+                        NUS Environmental Studies (2026–2030)
+                    </div>
+
+                    <h1 class="text-3xl md:text-5xl font-bold font-serif text-zinc-900 tracking-tight leading-tight">
+                        Chiam Jet Ming
+                    </h1>
+
+                    <p class="text-zinc-600 text-sm md:text-base leading-relaxed max-w-2xl">
+                        Photographer, short-form video editor, and media creator. Specializing in live event capture, candid portraiture, high-engagement social media reels, and corporate graphic layouts.
+                    </p>
+
+                    <!-- Quick Direct Contact Links -->
+                    <div class="flex flex-wrap gap-3 pt-1">
+                        <a href="https://www.instagram.com/jm.fujim/" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-100 border border-zinc-200 text-xs font-semibold text-zinc-800 hover:bg-zinc-200 transition-colors">
+                            <svg class="w-4 h-4 text-pink-600 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            @jm.fujim
+                        </a>
+                        <a href="mailto:chiamjetming@gmail.com" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-100 border border-zinc-200 text-xs font-semibold text-zinc-800 hover:bg-zinc-200 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4 text-zinc-600"></i>
+                            chiamjetming@gmail.com
+                        </a>
+                        <a href="tel:+6583632339" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-100 border border-zinc-200 text-xs font-semibold text-zinc-800 hover:bg-zinc-200 transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 text-zinc-600"></i>
+                            +65 83632339
+                        </a>
+                    </div>
+
+                    <!-- Fast Specs Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-zinc-100 text-xs">
+                        <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200/60">
+                            <span class="text-zinc-400 block mb-1">Primary Hardware</span>
+                            <strong class="text-zinc-800 font-semibold block">Fujifilm X-E5</strong>
+                            <span class="text-zinc-500 text-[11px]">Tamron 17-70mm f/2.8</span>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200/60">
+                            <span class="text-zinc-400 block mb-1">Design & Layout</span>
+                            <strong class="text-zinc-800 font-semibold block">Canva & Adobe</strong>
+                            <span class="text-zinc-500 text-[11px]">Vector & Print Backdrops</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EVENTS PHOTOGRAPHY SECTION -->
+        <section id="events" class="py-16 px-6 max-w-6xl mx-auto space-y-8">
+            <div class="border-b border-zinc-200/80 pb-4">
+                <span class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Section 01</span>
+                <h2 class="text-2xl md:text-3xl font-bold font-serif text-zinc-900 mt-1">Events Photography</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                
+                <!-- Event Photo 1 -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0079.JPG', 'Instructor Coaching', 'Candid interaction captured during studio baking workshop.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0079.JPG" alt="Workshop Coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0079.JPG', 'Instructor Coaching')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Instructor & Student Coaching</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Candid event interaction</p>
+                    </div>
+                </div>
+
+                <!-- Event Photo 2 -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0115.JPG', 'Workshop Hands-on Action', 'Capturing technique and focus during live workshop session.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0115.JPG" alt="Hands-on Action" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0115.JPG', 'Workshop Action')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Hands-on Action Focus</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Live activity capture</p>
+                    </div>
+                </div>
+
+                <!-- Event Photo 3 -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0232.jpg', 'Shallow Depth Macro', 'Close-up texture and detail shot using f/2.8 constant aperture.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0232.jpg" alt="Macro Detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0232.jpg', 'Macro Texture')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Macro Texture & Detail</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Shallow depth focal detail</p>
+                    </div>
+                </div>
+
+                <!-- Event Photo 4 -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0251.JPG', 'Group Turnout & Energy', 'Event recap photograph capturing participant turnout and milestone celebration.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0251.JPG" alt="Group Celebration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0251.JPG', 'Group Turnout')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Group Turnout & Emotion</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Event recap photography</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PORTRAITURE SECTION -->
+        <section id="portraiture" class="py-16 px-6 max-w-6xl mx-auto space-y-8 border-t border-zinc-200/60">
+            <div class="border-b border-zinc-200/80 pb-4">
+                <span class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Section 02</span>
+                <h2 class="text-2xl md:text-3xl font-bold font-serif text-zinc-900 mt-1">Portraiture</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo: Urban Night Friend Portrait (DSCF0286.JPG) -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0286.JPG', 'Night Urban Street Portraiture', 'Warm street light bokeh, subject isolation, and crisp focus under low ambient lighting conditions.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0286.JPG" alt="Friend Night Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0286.JPG', 'Urban Street Portrait')">
+                    </div>
+                    <div class="p-3.5 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Urban Night Portraiture</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Warm night lighting & background bokeh</p>
+                    </div>
+                </div>
+
+                <!-- Photo: Hanfu Portrait (DSCF2347.JPG) -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF2347.JPG', 'Framed Environmental Portraiture', 'Soft shallow depth of field with foreground bokeh and warm skin tone preservation.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF2347.JPG" alt="Hanfu Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF2347.JPG', 'Hanfu Portrait')">
+                    </div>
+                    <div class="p-3.5 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Framed Subject Portraiture</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Warm tone glow & soft foreground separation</p>
+                    </div>
+                </div>
+
+                <!-- Photo: Outdoor Portrait (DSCF0542.JPG) -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0542.JPG', 'Outdoor Natural Light Portraiture', 'Clean background separation and natural skin tone balancing under natural daylight.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0542.JPG" alt="Outdoor Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0542.JPG', 'Outdoor Portrait')">
+                    </div>
+                    <div class="p-3.5 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Outdoor Natural Light Portraiture</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Natural light subject isolation & warm tone balance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAVEL & ARCHITECTURE SECTION -->
+        <section id="travel" class="py-16 px-6 max-w-6xl mx-auto space-y-8 border-t border-zinc-200/60">
+            <div class="border-b border-zinc-200/80 pb-4">
+                <span class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Section 03</span>
+                <h2 class="text-2xl md:text-3xl font-bold font-serif text-zinc-900 mt-1">Travel & Architectural Photography</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo: Buddha Dome (DSCF1377.JPG) -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF1377.JPG', 'Hill of the Buddha Architectural Framing', 'Geometry and scale captured at Makomanai Takino Cemetery under winter snow condition.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF1377.JPG" alt="Hill of the Buddha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF1377.JPG', 'Hill of the Buddha')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Architectural Framing & Scale</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Symmetrical dome framing</p>
+                    </div>
+                </div>
+
+                <!-- Photo: Star Ferry Window (DSCF1954.JPG) -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF1954.JPG', 'Star Ferry Harbor Frame', 'Subtle frame-within-a-frame perspective of Hong Kong harbor skyline.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF1954.JPG" alt="Star Ferry View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF1954.JPG', 'Star Ferry Perspective')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Frame-Within-a-Frame</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Urban framing through ferry window</p>
+                    </div>
+                </div>
+
+                <!-- Mt. Fuji Reeds (DSCF0065.JPG) -->
+                <div class="image-card group relative rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 cursor-pointer" 
+                     onclick="openLightbox('DSCF0065.JPG', 'Golden Hour Reed Landscape', 'Fujifilm film simulation warm tone curve over snowy Mt. Fuji peak.')">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img src="DSCF0065.JPG" alt="Mt. Fuji Reeds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="handleImageError(this, 'DSCF0065.JPG', 'Warm Golden Reeds')">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <h3 class="text-xs font-semibold text-zinc-900">Golden Hour Warm Tones</h3>
+                        <p class="text-[11px] text-zinc-500 mt-0.5">Fujifilm custom color profile</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO & SOCIAL MEDIA SECTION -->
+        <section id="video" class="py-16 px-6 bg-zinc-900 text-white">
+            <div class="max-w-6xl mx-auto space-y-10">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-800 pb-6">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Short-Form Content</span>
+                        <h2 class="text-2xl md:text-3xl font-bold font-serif text-white mt-1">Video Editing & Social Reels</h2>
+                    </div>
+                    <div class="text-xs text-zinc-400">
+                        Multi-brand Instagram Reels & Promotional Video Editing
+                    </div>
+                </div>
+
+                <!-- Reel Feature Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                    
+                    <!-- Reel Card 1 -->
+                    <div class="p-6 rounded-2xl bg-zinc-950 border border-zinc-800 flex flex-col justify-between space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+                                    4,700+ Views
+                                </span>
+                                <h3 class="text-base font-semibold text-white mt-3">Studio Class BTS Reel</h3>
+                                <p class="text-xs text-zinc-400 mt-1">Fast-paced visual hook, rhythm-matched cuts, and organic action clips for Nanatang Baking Studio.</p>
+                            </div>
+                            <i data-lucide="video" class="w-5 h-5 text-zinc-400"></i>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800/80 text-xs space-y-2 text-zinc-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Fast hook in first 2 seconds</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Rhythm cuts & audio sync</div>
+                        </div>
+
+                        <a href="https://www.instagram.com/borrowedsugar_sg/reel/DSZxoV1E8lD/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-zinc-900 text-xs font-semibold hover:bg-zinc-100 transition-all">
+                            <span>Watch Reel on Instagram</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Reel Card 2 -->
+                    <div class="p-6 rounded-2xl bg-zinc-950 border border-zinc-800 flex flex-col justify-between space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+                                    4,400+ Views
+                                </span>
+                                <h3 class="text-base font-semibold text-white mt-3">International Chef Feature</h3>
+                                <p class="text-xs text-zinc-400 mt-1">Interview audio isolation, auto-caption overlays, and brand highlights for Nanatang Baking Studio.</p>
+                            </div>
+                            <i data-lucide="mic" class="w-5 h-5 text-zinc-400"></i>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800/80 text-xs space-y-2 text-zinc-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Clean speech isolation & captions</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Dynamic B-roll overlay</div>
+                        </div>
+
+                        <a href="https://www.instagram.com/borrowedsugar_sg/reel/DS19tfIE7gm/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-zinc-900 text-xs font-semibold hover:bg-zinc-100 transition-all">
+                            <span>Watch Reel on Instagram</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Reel Card 3: The Learning Cave -->
+                    <div class="p-6 rounded-2xl bg-zinc-950 border border-zinc-800 flex flex-col justify-between space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs font-semibold border border-sky-500/20">
+                                    Marketing Content
+                                </span>
+                                <h3 class="text-base font-semibold text-white mt-3">Tuition Marketing Reel</h3>
+                                <p class="text-xs text-zinc-400 mt-1">Edited marketing clips into engaging, Instagram-ready promotional reels for The Learning Cave.</p>
+                            </div>
+                            <i data-lucide="film" class="w-5 h-5 text-zinc-400"></i>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800/80 text-xs space-y-2 text-zinc-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-sky-400"></i> Instagram reel format optimization</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-sky-400"></i> Student-focused marketing pacing</div>
+                        </div>
+
+                        <a href="https://www.instagram.com/reel/DYdu4C3RdYA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-zinc-900 text-xs font-semibold hover:bg-zinc-100 transition-all">
+                            <span>Watch Reel on Instagram</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GRAPHIC DESIGN SECTION -->
+        <section id="graphic-design" class="py-16 px-6 max-w-6xl mx-auto space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200/80 pb-6">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Brand & Layout</span>
+                    <h2 class="text-2xl md:text-3xl font-bold font-serif text-zinc-900 mt-1">Corporate Graphic Design</h2>
+                </div>
+                <p class="text-xs text-zinc-500 max-w-sm">
+                    Promotional speaker panels, social graphics, and formal stage backdrop layouts built adhering to brand guidelines.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Graphic Asset 1 -->
+                <div class="p-5 rounded-2xl bg-white border border-zinc-200/80 space-y-4">
+                    <div class="aspect-[16/9] rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200 cursor-pointer"
+                         onclick="openLightbox('Join us at ACS 2026 (2).png', 'ACS 2026 Speaker Panel Graphic', 'Multi-speaker headshot alignment layout, brand palette adherence, and sponsor hierarchy.')">
+                        <img src="Join us at ACS 2026 (2).png" alt="Speaker Panel" class="w-full h-full object-cover" onerror="handleImageError(this, 'Join us at ACS 2026 (2).png', 'Speaker Panel Design')">
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-zinc-900">Speaker Panel Publicity Layout</h3>
+                        <p class="text-xs text-zinc-500 mt-1">Designed for Asia Climate Summit 2026 (Asia Carbon Institute Internship). Features multi-speaker headshot alignment and brand consistency.</p>
+                    </div>
+                </div>
+
+                <!-- Graphic Asset 2 -->
+                <div class="p-5 rounded-2xl bg-white border border-zinc-200/80 space-y-4">
+                    <div class="aspect-[16/9] rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200 cursor-pointer"
+                         onclick="openLightbox('Signing ceremony backdrop.jpg', 'Signing Ceremony Stage Backdrop Design', 'Large-scale formal vector backdrop for Joint Implementation Accord between ACI and NSTDA.')">
+                        <img src="Signing ceremony backdrop.jpg" alt="Signing Ceremony Backdrop" class="w-full h-full object-cover" onerror="handleImageError(this, 'Signing ceremony backdrop.jpg', 'Signing Ceremony Stage Backdrop')">
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-zinc-900">Formal Signing Ceremony Backdrop</h3>
+                        <p class="text-xs text-zinc-500 mt-1">Official stage backdrop layout for the Joint Implementation Accord (Asia Carbon Institute & NSTDA of Thailand). High-resolution vector print design.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE & CV SECTION -->
+        <section class="py-16 px-6 bg-zinc-50 border-t border-zinc-200/80">
+            <div class="max-w-6xl mx-auto space-y-12">
+                
+                <div class="border-b border-zinc-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Background</span>
+                        <h2 class="text-2xl md:text-3xl font-bold font-serif text-zinc-900 mt-1">Experience & Skillset</h2>
+                    </div>
+                    <div class="text-xs text-zinc-500">
+                        National University of Singapore | Environmental Studies (2026–2030)
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+                    
+                    <!-- Left Column: Work Experience -->
+                    <div class="md:col-span-7 space-y-8">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-400">Work Experience</h3>
+
+                        <!-- Role 1 -->
+                        <div class="space-y-2 border-l-2 border-zinc-200 pl-4">
+                            <div class="flex justify-between items-baseline flex-wrap gap-1">
+                                <h4 class="text-sm font-semibold text-zinc-900">Video Editor (Marketing Dept)</h4>
+                                <span class="text-xs text-zinc-500 font-mono">The Learning Cave &bull; Apr 2026</span>
+                            </div>
+                            <p class="text-xs text-zinc-600 leading-relaxed">
+                                Edited raw educational and promotional video clips into high-engagement, Instagram-ready reels tailored for social media marketing campaigns.
+                            </p>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="space-y-2 border-l-2 border-zinc-200 pl-4">
+                            <div class="flex justify-between items-baseline flex-wrap gap-1">
+                                <h4 class="text-sm font-semibold text-zinc-900">Part-Time Content Creator</h4>
+                                <span class="text-xs text-zinc-500 font-mono">Nanatang Baking Studio &bull; Dec 2025 – Feb 2026</span>
+                            </div>
+                            <p class="text-xs text-zinc-600 leading-relaxed">
+                                Managed end-to-end media production including event photography, short-form video reels, audio editing, and international guest chef feature interviews. Reached 9,100+ views on key promotional campaigns.
+                            </p>
+                        </div>
+
+                        <!-- Role 3 -->
+                        <div class="space-y-2 border-l-2 border-zinc-200 pl-4">
+                            <div class="flex justify-between items-baseline flex-wrap gap-1">
+                                <h4 class="text-sm font-semibold text-zinc-900">Graphic Design Intern</h4>
+                                <span class="text-xs text-zinc-500 font-mono">Asia Carbon Institute (ACI) &bull; May 2026 – Jul 2026</span>
+                            </div>
+                            <p class="text-xs text-zinc-600 leading-relaxed">
+                                Designed official corporate speaker panels, multi-headshot promotional graphics, formal signing ceremony stage backdrops, and executive presentation materials under brand guidelines.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Skills & Gear Stack -->
+                    <div class="md:col-span-5 space-y-8">
+                        
+                        <!-- Technical Skills -->
+                        <div class="space-y-3">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-400">Core Competencies</h3>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2.5 py-1 rounded-md bg-white border border-zinc-200 text-zinc-800 font-medium">Live Event Photography</span>
+                                <span class="px-2.5 py-1 rounded-md bg-white border border-zinc-200 text-zinc-800 font-medium">Short-Form Reel Editing</span>
+                                <span class="px-2.5 py-1 rounded-md bg-white border border-zinc-200 text-zinc-800 font-medium">Fujifilm Film Simulation</span>
+                                <span class="px-2.5 py-1 rounded-md bg-white border border-zinc-200 text-zinc-800 font-medium">Corporate Graphic Design</span>
+                                <span class="px-2.5 py-1 rounded-md bg-white border border-zinc-200 text-zinc-800 font-medium">Audio Editing & Captions</span>
+                            </div>
+                        </div>
+
+                        <!-- Software Stack -->
+                        <div class="space-y-3">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-400">Software & Tools</h3>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-zinc-700">
+                                <div class="p-2.5 rounded-lg bg-white border border-zinc-200 flex items-center gap-2">
+                                    <i data-lucide="layout" class="w-3.5 h-3.5 text-zinc-400"></i> Canva
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-white border border-zinc-200 flex items-center gap-2">
+                                    <i data-lucide="sliders" class="w-3.5 h-3.5 text-zinc-400"></i> Lightroom Mobile
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-white border border-zinc-200 flex items-center gap-2">
+                                    <i data-lucide="image" class="w-3.5 h-3.5 text-zinc-400"></i> Adobe Photoshop
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-white border border-zinc-200 flex items-center gap-2">
+                                    <i data-lucide="video" class="w-3.5 h-3.5 text-zinc-400"></i> CapCut
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-white border border-zinc-200 flex items-center gap-2">
+                                    <i data-lucide="grid" class="w-3.5 h-3.5 text-zinc-400"></i> SCRL
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-white border border-zinc-200 flex items-center gap-2">
+                                    <i data-lucide="type" class="w-3.5 h-3.5 text-zinc-400"></i> Phonto
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Camera Hardware -->
+                        <div class="space-y-3">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-400">Camera Setup</h3>
+                            <div class="p-3 rounded-lg bg-white border border-zinc-200 text-xs space-y-1">
+                                <div class="font-semibold text-zinc-900">Fujifilm X-E5 Camera Body</div>
+                                <div class="text-zinc-500">Tamron 17-70mm f/2.8 Constant Aperture Lens</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="py-12 px-6 bg-white border-t border-zinc-200 text-xs text-zinc-500 space-y-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <p class="font-semibold text-zinc-900 text-sm">Chiam Jet Ming</p>
+                <p class="text-zinc-500 mt-0.5">Photography, Short-Form Video & Visual Communications</p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-6 text-zinc-700 font-medium">
+                <a href="https://www.instagram.com/jm.fujim/" target="_blank" class="hover:text-zinc-900 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-pink-600 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> 
+                    @jm.fujim
+                </a>
+                <a href="mailto:chiamjetming@gmail.com" class="hover:text-zinc-900 flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i> chiamjetming@gmail.com
+                </a>
+                <a href="tel:+6583632339" class="hover:text-zinc-900 flex items-center gap-1.5">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> +65 83632339
+                </a>
+            </div>
+
+            <div>
+                <a href="#about" class="hover:text-zinc-900">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-zinc-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="max-w-4xl w-full bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center hover:bg-zinc-800 transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-8 bg-zinc-100 flex items-center justify-center p-2 min-h-[300px] max-h-[70vh]">
+                    <img id="lightbox-img" src="" alt="View" class="max-h-[68vh] w-auto object-contain rounded">
+                </div>
+                <div class="md:col-span-4 p-6 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span id="lightbox-file" class="text-[10px] font-mono text-zinc-400 block mb-1">FILENAME</span>
+                        <h3 id="lightbox-title" class="text-base font-bold text-zinc-900">Title</h3>
+                        <p id="lightbox-desc" class="text-xs text-zinc-600 mt-2 leading-relaxed">Description goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT CONTROLLER -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Lightbox Modal Functions
+        function openLightbox(src, title, desc) {
+            const img = document.getElementById('lightbox-img');
+            img.onerror = function() {
+                handleImageError(this, src, title);
+            };
+            img.src = src;
+            document.getElementById('lightbox-file').innerText = src;
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox-desc').innerText = desc;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
